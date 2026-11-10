@@ -560,7 +560,7 @@ function grp(m) {
 
 /* ---------- Program ---------- */
 var DAYS = [
-  { id: 'hu', name: 'Heavy Upper', short: 'Upper', kind: 'Heavy', dow: 0, focus: 'Chest, back, shoulders, arms', by: 'Rippetoe, Efferding, Nippard', slots: [
+  { id: 'hu', name: 'Heavy Upper', short: 'Upper', kind: 'Heavy', dow: 1, focus: 'Chest, back, shoulders, arms', by: 'Rippetoe, Efferding, Nippard', slots: [
     { id: 'hu1', ex: 'db_bench', alts: ['mach_chest_press', 'dips'], sets: 3, reps: [6, 8], rest: 180 },
     { id: 'hu2', ex: 'mach_row', alts: ['db_row', 'seated_cable_row'], sets: 3, reps: [6, 8], rest: 150 },
     { id: 'hu3', ex: 'db_ohp', alts: ['mach_ohp', 'arnold_press'], sets: 3, reps: [6, 8], rest: 150 },
@@ -568,7 +568,7 @@ var DAYS = [
     { id: 'hu5', ex: 'ez_curl', alts: ['cable_curl', 'db_hammer_curl'], sets: 2, reps: [8, 10], rest: 90 },
     { id: 'hu6', ex: 'pushdown', alts: ['dip_machine', 'skull_crusher'], sets: 2, reps: [8, 10], rest: 90 }
   ] },
-  { id: 'hl', name: 'Heavy Lower', short: 'Lower', kind: 'Heavy', dow: 1, focus: 'Quads, hamstrings, calves, abs', by: 'Rippetoe, Efferding, Nippard', slots: [
+  { id: 'hl', name: 'Heavy Lower', short: 'Lower', kind: 'Heavy', dow: 2, focus: 'Quads, hamstrings, calves, abs', by: 'Rippetoe, Efferding, Nippard', slots: [
     { id: 'hl1', ex: 'leg_press', alts: ['hack_squat', 'goblet_squat'], sets: 3, reps: [6, 8], rest: 180 },
     { id: 'hl2', ex: 'db_rdl', alts: ['back_ext', 'pull_through'], sets: 3, reps: [8, 10], rest: 150 },
     { id: 'hl3', ex: 'bulgarian', alts: ['db_lunge', 'goblet_squat'], sets: 2, reps: [8, 10], rest: 120 },
@@ -576,7 +576,7 @@ var DAYS = [
     { id: 'hl5', ex: 'lp_calf', alts: ['stand_calf', 'seated_calf'], sets: 3, reps: [8, 12], rest: 75 },
     { id: 'hl6', ex: 'cable_crunch', alts: ['mach_crunch', 'decline_crunch'], sets: 3, reps: [10, 15], rest: 60 }
   ] },
-  { id: 'cb', name: 'Chest + Back', short: 'Chest Back', kind: 'High intensity', dow: 2, focus: 'Few sets, last one all out', by: 'Yates, Nippard', slots: [
+  { id: 'cb', name: 'Chest + Back', short: 'Chest Back', kind: 'High intensity', dow: 3, focus: 'Few sets, last one all out', by: 'Yates, Nippard', slots: [
     { id: 'cb1', ex: 'inc_db_press', alts: ['inc_mach_press', 'db_bench'], sets: 2, reps: [8, 10], rest: 150, tech: ['fail'] },
     { id: 'cb2', ex: 'neutral_pulldown', alts: ['lat_pulldown', 'assisted_pullup'], sets: 2, reps: [8, 10], rest: 150, tech: ['fail'] },
     { id: 'cb3', ex: 'mach_chest_press', alts: ['db_bench', 'cable_fly'], sets: 2, reps: [8, 12], rest: 120, tech: ['fail'] },
@@ -586,7 +586,7 @@ var DAYS = [
     { id: 'cb7', ex: 'rev_pec_deck', alts: ['cable_rear_fly', 'face_pull'], sets: 2, reps: [12, 20], rest: 60, tech: ['drop'] },
     { id: 'cb8', ex: 'hanging_leg_raise', alts: ['captains_chair', 'reverse_crunch'], sets: 2, reps: [8, 15], rest: 60 }
   ] },
-  { id: 'lg', name: 'Legs', short: 'Legs', kind: 'Pump', dow: 3, focus: 'Machines, higher reps, constant tension', by: 'Feroce, Yates', slots: [
+  { id: 'lg', name: 'Legs', short: 'Legs', kind: 'Pump', dow: 4, focus: 'Machines, higher reps, constant tension', by: 'Feroce, Yates', slots: [
     { id: 'lg1', ex: 'leg_press', alts: ['hack_squat', 'goblet_squat'], sets: 3, reps: [12, 15], rest: 120 },
     { id: 'lg2', ex: 'leg_ext', alts: ['sissy_squat', 'rev_nordic'], sets: 3, reps: [12, 15], rest: 75, tech: ['drop'] },
     { id: 'lg3', ex: 'lying_curl', alts: ['seated_curl', 'nordic'], sets: 3, reps: [10, 15], rest: 75, tech: ['partials'] },
@@ -595,7 +595,7 @@ var DAYS = [
     { id: 'lg6', ex: 'lp_calf', alts: ['stand_calf', 'seated_calf'], sets: 3, reps: [12, 15], rest: 60, tech: ['partials'] },
     { id: 'lg7', ex: 'mach_crunch', alts: ['cable_crunch', 'decline_crunch'], sets: 2, reps: [10, 15], rest: 60 }
   ] },
-  { id: 'sa', name: 'Shoulders + Arms', short: 'Delts Arms', kind: 'Pump', dow: 4, focus: 'Supersets, short rests, a finisher', by: 'Piana, Feroce', slots: [
+  { id: 'sa', name: 'Shoulders + Arms', short: 'Delts Arms', kind: 'Pump', dow: 5, focus: 'Supersets, short rests, a finisher', by: 'Piana, Feroce', slots: [
     { id: 'sa1', ex: 'mach_ohp', alts: ['db_ohp', 'arnold_press'], sets: 3, reps: [10, 12], rest: 120 },
     { id: 'sa2', ex: 'db_lat_raise', alts: ['cable_lat_raise', 'mach_lat_raise'], sets: 4, reps: [12, 20], rest: 60, tech: ['drop'] },
     { id: 'sa3', ex: 'face_pull', alts: ['cable_rear_fly', 'db_rear_fly'], sets: 2, reps: [15, 20], rest: 60 },
@@ -607,7 +607,7 @@ var DAYS = [
     { id: 'sa9', ex: 'pushdown', alts: ['rope_pushdown', 'oh_db_ext'], sets: 1, reps: [25, 30], rest: 60, ss: 'C', tech: ['finisher'] }
   ] }
 ];
-var DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+var DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 var WEEKS = [
   { n: 1, rir: '3', label: 'Find your weights', note: 'Every set stops three reps short of failure. Pick loads you own and log all of it. The heavy lifts start lighter than you think.' },
@@ -675,7 +675,7 @@ function fmtShort(iso) { return new Date(iso).toLocaleDateString(undefined, { mo
 function fmtClock(sec) { sec = Math.max(0, Math.floor(sec)); var h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60; return (h ? h + ':' + (m < 10 ? '0' : '') : '') + m + ':' + (s < 10 ? '0' : '') + s; }
 function minsBetween(a, b) { return Math.max(0, Math.round((new Date(b) - new Date(a)) / 60000)); }
 function ymd(d) { d = new Date(d); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
-function monday(d) { d = new Date(d); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d; }
+function weekStart(d) { d = new Date(d); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - d.getDay()); return d; }
 function uid() { return 's_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 function conv(w, from) { if (w == null || !from || from === U()) return w; var x = from === 'kg' ? w * 2.20462 : w / 2.20462; return Math.round(x * 2) / 2; }
 function roundLoad(w) { var step = U() === 'kg' ? 2.5 : 5; return Math.round(w / step) * step; }
@@ -827,8 +827,8 @@ function createSession(day) {
   return s;
 }
 function weekStreak() {
-  var have = {}; finished().forEach(function (s) { have[ymd(monday(s.startedAt))] = 1; });
-  var d = monday(new Date()), n = 0;
+  var have = {}; finished().forEach(function (s) { have[ymd(weekStart(s.startedAt))] = 1; });
+  var d = weekStart(new Date()), n = 0;
   if (!have[ymd(d)]) d.setDate(d.getDate() - 7);
   while (have[ymd(d)]) { n++; d.setDate(d.getDate() - 7); }
   return n;
@@ -1134,15 +1134,15 @@ function renderProgress() {
   var h = '<div class="seg" role="tablist">' + tabs.map(function (t) { return '<button data-action="ptab" data-t="' + t[0] + '" class="' + (ptab === t[0] ? 'on' : '') + '" role="tab" aria-selected="' + (ptab === t[0]) + '">' + t[1] + '</button>'; }).join('') + '</div>';
   var done = finished();
   if (ptab === 'overview') {
-    var mon = monday(new Date()), wkVol = 0, wkN = 0;
-    done.forEach(function (s) { if (new Date(s.startedAt) >= mon) { wkVol += sessVolume(s); wkN++; } });
+    var wk0 = weekStart(new Date()), wkVol = 0, wkN = 0;
+    done.forEach(function (s) { if (new Date(s.startedAt) >= wk0) { wkVol += sessVolume(s); wkN++; } });
     var prCount = 0; done.forEach(function (s) { prCount += sessPRs(s).length; });
-    h += '<div class="tiles"><div class="tile"><span class="eyebrow">Workouts</span><span class="num">' + done.length + '</span></div><div class="tile"><span class="eyebrow">Volume, 7 days</span><span class="num">' + fmtVol(wkVol) + '<small>' + U() + '</small></span></div><div class="tile"><span class="eyebrow">Records</span><span class="num">' + prCount + '</span></div></div>';
+    h += '<div class="tiles"><div class="tile"><span class="eyebrow">Workouts</span><span class="num">' + done.length + '</span></div><div class="tile"><span class="eyebrow">Volume, this week</span><span class="num">' + fmtVol(wkVol) + '<small>' + U() + '</small></span></div><div class="tile"><span class="eyebrow">Records</span><span class="num">' + prCount + '</span></div></div>';
     var have = {}; done.forEach(function (s) { have[ymd(s.startedAt)] = 1; });
-    var start = monday(new Date()); start.setDate(start.getDate() - 28);
+    var start = weekStart(new Date()); start.setDate(start.getDate() - 28);
     var today = ymd(new Date()), cal = '';
     for (var i = 0; i < 35; i++) { var d = new Date(start); d.setDate(start.getDate() + i); var k = ymd(d); cal += '<div class="d' + (have[k] ? ' on' : '') + (k === today ? ' today' : '') + (k > today ? ' future' : '') + '">' + d.getDate() + '</div>'; }
-    h += '<div class="card"><h3>Last five weeks</h3><div class="cal">' + ['M', 'T', 'W', 'T', 'F', 'S', 'S'].map(function (x) { return '<div class="h">' + x + '</div>'; }).join('') + cal + '</div></div>';
+    h += '<div class="card"><h3>Last five weeks</h3><div class="cal">' + ['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(function (x) { return '<div class="h">' + x + '</div>'; }).join('') + cal + '</div></div>';
     var plan = plannedByGroup(), got = doneByGroup();
     h += '<div class="card"><h3>Sets by muscle, week ' + state.week + '</h3><div class="bars">' + GROUPS.map(function (g) { var p = weekInfo().deload ? Math.ceil(plan[g] / 2) : plan[g]; return '<div class="bar"><span>' + g + '</span><span class="track"><i style="width:' + Math.min(100, p ? Math.round(100 * got[g] / p) : 0) + '%"></i></span><span class="v">' + got[g] + ' / ' + p + '</span></div>'; }).join('') + '</div><p class="small dim" style="margin-top:10px">Direct hard sets logged against the plan for this training week.</p></div>';
   } else if (ptab === 'lifts') {
