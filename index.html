@@ -576,7 +576,7 @@ var DAYS = [
     { id: 'hl5', ex: 'lp_calf', alts: ['stand_calf', 'seated_calf'], sets: 3, reps: [8, 12], rest: 75 },
     { id: 'hl6', ex: 'cable_crunch', alts: ['mach_crunch', 'decline_crunch'], sets: 3, reps: [10, 15], rest: 60 }
   ] },
-  { id: 'cb', name: 'Chest + Back', short: 'Chest Back', kind: 'High intensity', dow: 3, focus: 'Few sets, last one all out', by: 'Yates, Nippard', slots: [
+  { id: 'cb', name: 'Chest + Back', short: 'Chest Back', kind: 'High intensity', dow: 2, focus: 'Few sets, last one all out', by: 'Yates, Nippard', slots: [
     { id: 'cb1', ex: 'inc_db_press', alts: ['inc_mach_press', 'db_bench'], sets: 2, reps: [8, 10], rest: 150, tech: ['fail'] },
     { id: 'cb2', ex: 'neutral_pulldown', alts: ['lat_pulldown', 'assisted_pullup'], sets: 2, reps: [8, 10], rest: 150, tech: ['fail'] },
     { id: 'cb3', ex: 'mach_chest_press', alts: ['db_bench', 'cable_fly'], sets: 2, reps: [8, 12], rest: 120, tech: ['fail'] },
@@ -585,6 +585,15 @@ var DAYS = [
     { id: 'cb6', ex: 'cable_pullover', alts: ['db_pullover', 'sa_cable_row'], sets: 2, reps: [12, 15], rest: 75, tech: ['partials'] },
     { id: 'cb7', ex: 'rev_pec_deck', alts: ['cable_rear_fly', 'face_pull'], sets: 2, reps: [12, 20], rest: 60, tech: ['drop'] },
     { id: 'cb8', ex: 'hanging_leg_raise', alts: ['captains_chair', 'reverse_crunch'], sets: 2, reps: [8, 15], rest: 60 }
+  ] },
+  { id: 'lg', name: 'Legs', short: 'Legs', kind: 'Pump', dow: 3, focus: 'Machines, higher reps, constant tension', by: 'Feroce, Yates', slots: [
+    { id: 'lg1', ex: 'leg_press', alts: ['hack_squat', 'goblet_squat'], sets: 3, reps: [12, 15], rest: 120 },
+    { id: 'lg2', ex: 'leg_ext', alts: ['sissy_squat', 'rev_nordic'], sets: 3, reps: [12, 15], rest: 75, tech: ['drop'] },
+    { id: 'lg3', ex: 'lying_curl', alts: ['seated_curl', 'nordic'], sets: 3, reps: [10, 15], rest: 75, tech: ['partials'] },
+    { id: 'lg4', ex: 'db_lunge', alts: ['goblet_squat', 'bulgarian'], sets: 2, reps: [10, 12], rest: 90 },
+    { id: 'lg5', ex: 'back_ext', alts: ['db_rdl', 'pull_through'], sets: 2, reps: [10, 15], rest: 90 },
+    { id: 'lg6', ex: 'lp_calf', alts: ['stand_calf', 'seated_calf'], sets: 3, reps: [12, 15], rest: 60, tech: ['partials'] },
+    { id: 'lg7', ex: 'mach_crunch', alts: ['cable_crunch', 'decline_crunch'], sets: 2, reps: [10, 15], rest: 60 }
   ] },
   { id: 'sa', name: 'Shoulders + Arms', short: 'Delts Arms', kind: 'Pump', dow: 4, focus: 'Supersets, short rests, a finisher', by: 'Piana, Feroce', slots: [
     { id: 'sa1', ex: 'mach_ohp', alts: ['db_ohp', 'arnold_press'], sets: 3, reps: [10, 12], rest: 120 },
@@ -596,15 +605,6 @@ var DAYS = [
     { id: 'sa7', ex: 'hammer_curl', alts: ['db_hammer_curl', 'reverse_curl'], sets: 2, reps: [12, 15], rest: 60, ss: 'B' },
     { id: 'sa8', ex: 'cable_curl', alts: ['ez_curl', 'bayesian_curl'], sets: 1, reps: [25, 30], rest: 60, ss: 'C', tech: ['finisher'] },
     { id: 'sa9', ex: 'pushdown', alts: ['rope_pushdown', 'oh_db_ext'], sets: 1, reps: [25, 30], rest: 60, ss: 'C', tech: ['finisher'] }
-  ] },
-  { id: 'lg', name: 'Legs', short: 'Legs', kind: 'Pump', dow: 5, focus: 'Machines, higher reps, constant tension', by: 'Feroce, Yates', slots: [
-    { id: 'lg1', ex: 'leg_press', alts: ['hack_squat', 'goblet_squat'], sets: 3, reps: [12, 15], rest: 120 },
-    { id: 'lg2', ex: 'leg_ext', alts: ['sissy_squat', 'rev_nordic'], sets: 3, reps: [12, 15], rest: 75, tech: ['drop'] },
-    { id: 'lg3', ex: 'lying_curl', alts: ['seated_curl', 'nordic'], sets: 3, reps: [10, 15], rest: 75, tech: ['partials'] },
-    { id: 'lg4', ex: 'db_lunge', alts: ['goblet_squat', 'bulgarian'], sets: 2, reps: [10, 12], rest: 90 },
-    { id: 'lg5', ex: 'back_ext', alts: ['db_rdl', 'pull_through'], sets: 2, reps: [10, 15], rest: 90 },
-    { id: 'lg6', ex: 'lp_calf', alts: ['stand_calf', 'seated_calf'], sets: 3, reps: [12, 15], rest: 60, tech: ['partials'] },
-    { id: 'lg7', ex: 'mach_crunch', alts: ['cable_crunch', 'decline_crunch'], sets: 2, reps: [10, 15], rest: 60 }
   ] }
 ];
 var DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -1182,7 +1182,7 @@ function renderProgress() {
 /* ---------- Render: Program ---------- */
 function renderProgram() {
   var byDow = {}; DAYS.forEach(function (d) { byDow[d.dow] = d; });
-  var h = '<div class="card"><h3>The week</h3><div class="sched">' + DOW.map(function (n, i) { var d = byDow[i]; return '<div class="' + (d ? '' : 'off') + '">' + n.toUpperCase() + '<b>' + (d ? esc(d.short) : 'Off') + '</b></div>'; }).join('') + '</div><div class="prose" style="margin-top:12px"><p>Two heavy days built on dumbbell and machine basics at 6 to 8 reps, then three bodybuilding days. Every muscle gets trained twice a week: once heavy, once for intensity or pump. Any order works as long as Heavy Upper and Chest + Back are two days apart.</p></div></div>';
+  var h = '<div class="card"><h3>The week</h3><div class="sched">' + DOW.map(function (n, i) { var d = byDow[i]; return '<div class="' + (d ? '' : 'off') + '">' + n.toUpperCase() + '<b>' + (d ? esc(d.short) : 'Off') + '</b></div>'; }).join('') + '</div><div class="prose" style="margin-top:12px"><p>Two heavy days built on dumbbell and machine basics at 6 to 8 reps, then three bodybuilding days. Every muscle gets trained twice a week: once heavy, once for intensity or pump. It runs Monday to Friday with weekends off. Heavy Upper and Chest + Back have a day between them, and so do the two leg days. Miss a day and the app simply serves it next; nothing moves to the weekend.</p></div></div>';
   h += '<div class="card"><h3>Who shaped this</h3><div class="who">' + WHO.map(function (p) { return '<div class="p"><b>' + esc(p.n) + '</b><div class="take">' + esc(p.take) + '</div><div class="skip">Left out: ' + esc(p.skip) + '</div></div>'; }).join('') + '</div><div class="prose" style="margin-top:12px"><p>Most of these six train body-part splits, not push, pull, legs. Rippetoe and Nippard argue for more frequency. The hybrid keeps both ideas without pretending they agree.</p></div></div>';
   DAYS.forEach(function (d, i) {
     var open = !!openProg[d.id];
